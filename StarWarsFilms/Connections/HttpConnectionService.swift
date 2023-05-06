@@ -20,7 +20,7 @@ final class HttpConnectionService: HttpConnectionServiceable {
             completion(.failure(error))
             return
         }
-        AF.request(url).responseData { response in
+        AF.request(requestURL).responseData { response in
             switch response.result {
             case .success(let data):
                 completion(.success(data))
